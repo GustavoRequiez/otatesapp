@@ -1,0 +1,41 @@
+{% extends "OtatesApp/base.html"%}
+
+{% load static %}
+
+{% block content%}
+
+<h1 class="etqlistado">
+    <strong>
+        LISTADO DE SUCURSALES
+    </strong>
+</h1>
+{% if sucursales %}
+            <p class="pcount">Sucursales encontradas: {{sucursales|length}}</p>
+            <div class="formulariocaptura">
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Responsable</th>
+                    </tr>
+                    {% for sucursal in sucursales %}
+                    <tr>
+                        <td>{{sucursal.nombre}}</td>
+                        <td>{{sucursal.direccion}}</td>
+                        <td>{{sucursal.tfno}}</td>
+                        <td>{{sucursal.responsable}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <br/>
+            <br/>
+            <div>
+                <p style="text-align: center;text-decoration: underline; font-size: 25px; color:cornsilk;">
+                    <a href="{% url 'exportar' 1 %}" class="btn btn-info" role="button" >Exportar a Excel</a>
+                </p>
+            </div>
+
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "OtatesApp/base.html"%}
+
+{% load static %}
+
+{% block content%}
+
+<h1 style="text-align: center; color:darkblue;">
+    <strong>
+        REGISTRO DE SUCURSAL
+    </strong>
+</h1>
+<form action="" method="POST">{% csrf_token %}
+    <table class="tablalistar">
+        <tr>
+            <th>
+                <label for="id_nombre">Nombre:</label>
+            </th>
+            <td>
+                <input type="text" name="nombre" required id="id_nombre">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="id_direccion">Direccion:</label>
+            </th>
+            <td>
+                <input type="text" name="direccion" required id="id_direccion">
+            </td>
+        </tr>  
+        <tr>
+            <th>
+                <label for="id_tfno">Tfno:</label>
+            </th>
+            <td>
+                <input type="text" name="tfno" required id="id_tfno">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="id_responsable">Responsable:</label>
+            </th>
+            <td>
+                <input list="users" name="responsable" required id="id_responsable">
+                <datalist id="users" >
+                    {% for user in users %}
+                        <option value={{user}}>
+                    {% endfor %}
+            </td>
+        </tr>
+    </table>
+    <div style="height: 5px;"></div>
+    <div style="margin: 0 auto; width: fit-content;">
+        <input type="submit" value="Guardar" />
+    </div>
+    <div style="height: 5px;"></div>
+    <div style="margin: 0 auto; width: fit-content;">
+        <a href="{% url 'listarsucursales' %}" class="btn btn-info" role="button">Listar Sucursales</a>
+    </div>
+</form>
+
+{% endblock %}

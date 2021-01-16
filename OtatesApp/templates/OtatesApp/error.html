@@ -1,0 +1,24 @@
+{% extends "OtatesApp/base.html"%}
+
+{% load static %}
+
+{% block content%}
+<style>
+    h3{
+        color: red; 
+        background-color: whitesmoke;
+        text-align: center;
+    }
+</style>
+
+<h3>
+    <strong>
+        ERROR AL REGISTRAR {{tipo}}
+    </strong>
+</h3>
+<h3>
+    <strong>
+        {{mensaje}}
+    </strong>
+</h3>
+{% endblock %}

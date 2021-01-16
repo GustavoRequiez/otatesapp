@@ -1,0 +1,26 @@
+{% extends "OtatesApp/base.html"%}
+
+{% load static %}
+
+{% block content%}
+
+<h1 style="text-align: center; color:darkblue;">
+    <strong>
+        REGISTRO DE EGRESOS
+    </strong>
+</h1>
+<form action="" method="POST">{% csrf_token %}
+    <table class="tablalistar">
+        {{formulario.as_table}}
+    </table>
+    <div style="height: 5px;"></div>
+    <div style="margin: auto; width: fit-content;">
+        <input type="submit" value="Guardar" />
+    </div>
+    <div style="height: 5px;"></div>
+    <div style="margin: auto; width: fit-content;">
+        <a href="{% url 'listaregresos' %}" class="btn btn-info" role="button">Listar Egresos</a>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "OtatesApp/base.html"%}
+
+{% load static %}
+
+{% block content%}
+<h1 class="etqlistado">
+    <strong>
+        LISTADO DE PROVEEDORES
+    </strong>
+</h1>
+{% if proveedores %}
+            <p class="pcount">Proveedores encontrados: {{proveedores|length}}</p>
+            <div class="formulariocaptura">
+                <table>
+                    <tr>
+                        <th>Razon social</th>
+                        <th>Nombre</th>
+                        <th>RFC</th>
+                        <th>Telefono</th>
+                    </tr>
+                    {% for proveedor in proveedores %}
+                    <tr>
+                        <td>{{proveedor.razonsocial}}</td>
+                        <td>{{proveedor.nombre}}</td>
+                        <td>{{proveedor.rfc}}</td>
+                        <td>{{proveedor.tfno}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>  
+            <br/>
+            <br/>
+            <div>
+                <p style="text-align: center;text-decoration: underline; font-size: 25px; color:cornsilk;">
+                    <a href="{% url 'exportar' 2 %}" class="btn btn-info" role="button" >Exportar a Excel</a>
+                </p>
+            </div>
+        {% endif %}
+{% endblock %}
