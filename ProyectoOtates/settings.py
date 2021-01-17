@@ -23,9 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'rybg!h7ucu5i2inf5_598@awa*$eizl35(kgj*sqrkr0ax1_af'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '23.239.22.100',
+    '192.168.139.189',
+    'otatescie.com',
+    'www.otatescie.com',
+]
 
 
 # Application definition
@@ -76,16 +81,20 @@ WSGI_APPLICATION = 'ProyectoOtates.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql_cymysql',
-        'NAME': 'db_proyectootates',
-        'USER': 'root',
-        'PASSWORD': 'requiez',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'otatesapp',
+        'USER': 'otates',
+        'PASSWORD': 'otates1950',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
     #'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
+    #    'ENGINE': 'mysql_cymysql',
+    #    'NAME': 'db_proyectootates',
+    #    'USER': 'root',
+    #    'PASSWORD': 'requiez',
+    #    'HOST': '127.0.0.1',
+    #    'PORT': '3306',
     #}
 }
 
