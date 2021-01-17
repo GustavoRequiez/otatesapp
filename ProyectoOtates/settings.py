@@ -84,18 +84,18 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'otatesapp',
         'USER': 'otates',
-        'PASSWORD': 'otates1950',
+        'PASSWORD': '1o5ot4t35',
         'HOST': 'localhost',
         'PORT': '5432',
     }
-    #'default': {
+    # 'default': {
     #    'ENGINE': 'mysql_cymysql',
     #    'NAME': 'db_proyectootates',
     #    'USER': 'root',
     #    'PASSWORD': 'requiez',
     #    'HOST': '127.0.0.1',
     #    'PORT': '3306',
-    #}
+    # }
 }
 
 
@@ -121,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-mx' #'en-us'
+LANGUAGE_CODE = 'es-mx'  # 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -136,4 +136,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
